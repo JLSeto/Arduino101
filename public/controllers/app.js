@@ -1,5 +1,15 @@
 var app = angular.module('myApp', []);
+
 app.controller('myCtrl', function($scope, socket){
+
+$scope.t = 'N/A';
+$scope.ax = 'N/A';
+$scope.ay = 'N/A';
+$scope.az = 'N/A';
+$scope.gx = 'N/A';
+$scope.gy = 'N/A';
+$scope.gz = 'N/A';
+
 
 socket.on('connect', function(){
 	console.log("connected");
@@ -25,6 +35,8 @@ socket.on('gy', function(data){
 socket.on('gz', function(data){
 	$scope.gz = data;
 });
+
+
 });
 
 

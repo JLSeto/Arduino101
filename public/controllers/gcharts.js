@@ -1,3 +1,17 @@
+var socket = io()
+  socket.on('connect', function() {
+    console.log('Connected to server');
+    socket.on('t', function(data){
+    	socket.emit('something', 'hello from client');
+    });
+  });
+
+
+
+
+
+
+/*
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(init);
 
@@ -37,9 +51,6 @@ function init() {
 
   socket.onmessage = function (event) {
     var obj = JSON.parse(event.data);
-    document.getElementById('x').innerHTML = obj.d.accelX;
-    document.getElementById('y').innerHTML = obj.d.accelY;
-    document.getElementById('z').innerHTML = obj.d.accelZ;
 
    if (data.getNumberOfRows() > 12) {
      data.removeRow(0);  //data.getNumberOfRows()
@@ -57,3 +68,4 @@ function init() {
 
   drawChart();
 }
+*/

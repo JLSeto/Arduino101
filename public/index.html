@@ -15,10 +15,11 @@
     <!-- Add Title -->
     <title>Sensor Display</title>
 	</head>
-  <body class="container">
-    <h1 class="jumbotron text-center">Iot with Arduino101 Demo</h1>
-
-    <div class="container text-center" ng-hide ng-app="myApp" ng-controller="myCtrl">
+  <body class="container" ng-hide ng-app="myApp" ng-controller="myCtrl">
+    <div class="jumbotron text-center">
+      <h1>IoT with Arduino101 Demo</h1>
+      <p>Values will display in real time when device is connected...</p>
+    </div>
 
       <table class="table">
   <thead>
@@ -56,10 +57,12 @@
   </tbody>
 </table>
 
+  <div id="visualization" class="chart"></div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-      <script src="controllers/app.js"></script>
       <script src="/socket.io/socket.io.js"></script>
+      <script src="controllers/app.js"></script>
+      <script src="controllers/gcharts.js"></script>
       <!-- JavaScript: placed at the end of the document so the pages load faster -->
   		<!-- jQuery library -->
   		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
