@@ -1,28 +1,19 @@
 var socket = io()
-  socket.on('connect', function() {
-    console.log('Connected to server');
-    socket.on('t', function(data){
-    	socket.emit('something', 'hello from client');
-    });
-  });
-
-
-
-
-
-
-/*
 google.charts.load('current', {packages: ['corechart', 'bar']});
 google.charts.setOnLoadCallback(init);
+
+socket.on('connect', function() {
+  console.log('Connected to server');
+});
 
 function init() {
   var options = {
     //width: 800,
     //height: 480,
-    vAxis: {minValue:-4, maxValue:4},
+    vAxis: {minValue:-1000, maxValue:1000},
     animation: {
-      duration: 200,
-      easing: 'in'
+      duration: 0,
+      easing: 'linear'
     }
   };
 
@@ -49,23 +40,19 @@ function init() {
     return function () {return counter += 1;}
   })();
 
-  socket.onmessage = function (event) {
-    var obj = JSON.parse(event.data);
-
-   if (data.getNumberOfRows() > 12) {
-     data.removeRow(0);  //data.getNumberOfRows()
-   }
-   // Generating a random x, y pair and inserting it so rows are sorted.
-   var t = add();
-   var x = parseFloat(obj.d.accelX);
-   var y = parseFloat(obj.d.accelY);
-   var z = parseFloat(obj.d.accelZ);
-   var where = data.getNumberOfRows();
-   console.log(x);
-   data.insertRows(where, [[t.toString(), x, y, z]]);
-   drawChart();
- };
+    socket.on('something', function(event){
+      console.log("rich bitch");
+      if (data.getNumberOfRows() > 12) {
+        data.removeRow(0);  //data.getNumberOfRows()
+      }
+      var t = add();
+      var x = event.ax;
+      var y = event.ay;
+      var z = event.az;
+      var where = data.getNumberOfRows();
+      data.insertRows(where, [[t.toString(), x, y, z]]);
+      drawChart();
+    });
 
   drawChart();
 }
-*/

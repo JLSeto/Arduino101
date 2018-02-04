@@ -37,7 +37,7 @@ void setup() {
   CurieIMU.begin();
   CurieIMU.autoCalibrateAccelerometerOffset(X_AXIS, 0);
   CurieIMU.autoCalibrateAccelerometerOffset(Y_AXIS, 0);
-  CurieIMU.autoCalibrateAccelerometerOffset(Z_AXIS, 1);
+  CurieIMU.autoCalibrateAccelerometerOffset(Z_AXIS, 0);
 
   //Initialize BLE Peripheral
   blePeripheral.setDeviceName("set0101");
