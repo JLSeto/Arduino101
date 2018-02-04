@@ -75,10 +75,10 @@ noble.on('discover', function(peripheral) {
 					if(ts && ax && az && az && gx && gy && gz){
 						shiraseru();//turn on on notifications
 						detawoOkuru();
-						console.log("yay");
+						console.log("Found all Services!");
 					}
 					else{
-						console.log("shit...");
+						console.log("Error...");
 					}
 
 				});
