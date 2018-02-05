@@ -41,7 +41,6 @@ function init() {
   })();
 
     socket.on('something', function(event){
-      console.log("rich bitch");
       if (data.getNumberOfRows() > 12) {
         data.removeRow(0);  //data.getNumberOfRows()
       }

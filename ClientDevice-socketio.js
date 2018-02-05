@@ -75,6 +75,7 @@ noble.on('discover', function(peripheral) {
 					if(ts && ax && az && az && gx && gy && gz){
 						shiraseru();//turn on on notifications
 						detawoOkuru();
+            freqwrite();
 						console.log("Found all Services!");
 					}
 					else{
@@ -144,5 +145,14 @@ function detawoOkuru(){
 		//console.log("GZ: ", data.readInt32LE(0));
 		socket.emit('gz',data.readInt32LE(0));
 	});
+
+}
+
+function freqwrite(){
+  var buf = new Buffer(2);
+  socket.on('freq',function(data){
+    buf.writeInt16LE(data, 0);
+    ts.write(buf);
+  })
 
 }

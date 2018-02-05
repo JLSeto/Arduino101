@@ -14,6 +14,11 @@ io.on('connection', function(socket){
   console.log('a user connected');
   var obj = {};
 
+  socket.on('freq', function(msg){
+    console.log(msg);
+    socket.broadcast.emit('freq',msg);
+  });
+
   socket.on('t', function(msg){
     var code = crypto.randomBytes(3).toString('hex');
     obj['_id']=code

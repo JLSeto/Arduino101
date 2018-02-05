@@ -10,7 +10,6 @@ $scope.gx = 'N/A';
 $scope.gy = 'N/A';
 $scope.gz = 'N/A';
 
-
 socket.on('connect', function(){
 	console.log("connected");
 });
@@ -35,6 +34,12 @@ socket.on('gy', function(data){
 socket.on('gz', function(data){
 	$scope.gz = data;
 });
+
+$scope.changFreq = function(){
+console.log($scope.frequency);
+socket.emit('freq',$scope.frequency);
+
+};
 
 
 });
