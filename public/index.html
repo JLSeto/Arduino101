@@ -21,45 +21,61 @@
       <p>Values will display in real time when device is connected...</p>
     </div>
 
+    <div class="container">
+      <div class="row">
+        <div class="col">
       <table class="table">
-  <thead>
-
-  </thead>
-  <tbody>
-    <tr>
-      <td>Sampling Time (ms)</td>
-      <td>{{t}}</td>
-    </tr>
-    <tr>
-      <td>Acceleration X</td>
-      <td>{{ax}}</td>
-    </tr>
-    <tr>
-      <td>Acceleration Y</td>
-      <td>{{ay}}</td>
-    </tr>
-    <tr>
-      <td>Acceleration Z</td>
-      <td>{{az}}</td>
-    </tr>
-    <tr>
-      <td>Gyrometer X</td>
-      <td>{{gx}}</td>
-    </tr>
-    <tr>
-      <td>Gyrometer Y</td>
-      <td>{{gy}}</td>
-    </tr>
-    <tr>
-      <td>Gyrometer Z</td>
-      <td>{{gz}}</td>
-    </tr>
-  </tbody>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td>Sampling Time (ms)</td>
+            <td>{{t}}</td>
+          </tr>
+          <tr>
+            <td>Acceleration X</td>
+            <td>{{ax}}</td>
+          </tr>
+          <tr>
+            <td>Acceleration Y</td>
+            <td>{{ay}}</td>
+          </tr>
+          <tr>
+            <td>Acceleration Z</td>
+            <td>{{az}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div class = "col">
+  <table class="table">
+<thead>
+</thead>
+<tbody>
+<tr>
+  <td>Gyrometer Z</td>
+  <td>{{gz}}</td>
+</tr>
+<tr>
+  <td>Gyrometer Y</td>
+  <td>{{gy}}</td>
+</tr>
+<tr>
+  <td>Gyrometer X</td>
+  <td>{{gx}}</td>
+</tr>
+</tbody>
 </table>
+</div>
 
-<td><input class="form-control" ng-model="frequency"></td>
+
+
+</div>
+</div>
+
+<div class="text-center">
+<td><input class="form-group mx-sm-3 mb-2" ng-model="frequency"></td>
 <td><button class="btn btn-primary" ng-click="changFreq()">Change Sampling Time</button></td>
-
+</div>
 
   <div id="visualization" class="chart"></div>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
