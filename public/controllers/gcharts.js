@@ -37,14 +37,14 @@ function init() {
 
   var add = (function () {
     var counter = 0;
-    return function () {return counter += 1;}
+    return function (event) {return counter += event;}
   })();
 
     socket.on('something', function(event){
       if (data.getNumberOfRows() > 12) {
         data.removeRow(0);  //data.getNumberOfRows()
       }
-      var t = add();
+      var t = add(event.t);
       var x = event.ax;
       var y = event.ay;
       var z = event.az;

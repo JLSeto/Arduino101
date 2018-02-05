@@ -34,10 +34,14 @@ socket.on('gy', function(data){
 socket.on('gz', function(data){
 	$scope.gz = data;
 });
+socket.on('something', function(data){
+	socket.emit('something2',data)
+});
 
 $scope.changFreq = function(){
 console.log($scope.frequency);
 socket.emit('freq',$scope.frequency);
+$scope.frequency = null; //clear the form input
 
 };
 

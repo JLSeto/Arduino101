@@ -19,7 +19,7 @@ var gy = null;
 var gz = null;
 var data = {};
 
-var socket = io.connect('http://localhost:8000', {reconnect: true});
+var socket = io.connect('insert your server address here', {reconnect: true}); //http://localhost:8000
 
 socket.on('connect', function() {
   console.log('Connected to server');

@@ -7,7 +7,7 @@ const crypto = require('crypto');
 
 app.use(express.static(__dirname + '/public'));
 
-//var url = "mongodb://localhost:27017/mydb";
+var url = "mongodb://localhost:27017/mydb";
 
 
 io.on('connection', function(socket){
@@ -20,8 +20,9 @@ io.on('connection', function(socket){
   });
 
   socket.on('t', function(msg){
-    var code = crypto.randomBytes(3).toString('hex');
-    obj['_id']=code
+    //var code = ObjectID();
+    //obj['_id']=code;
+    //console.log(code);
     obj['t']=msg;
     socket.broadcast.emit('t',msg);
   });
@@ -49,18 +50,20 @@ io.on('connection', function(socket){
     obj['gz']=msg;
     socket.broadcast.emit('gz',msg);
     socket.broadcast.emit('something',obj);
-/*
+  });
+  socket.on('something2',function(msg){
+    //console.log(msg);
     Monji.connect(url, function(err, db) {
       if (err) throw err;
-      var dbo = db.db("newdb");
-      dbo.collection("sensordata").insert(obj, function(err, res) {
+      var dbo = db.db("a101");
+      dbo.collection("sensordata4").insert(msg, function(err, res) {
         if (err) throw err;
-        console.log("1 document inserted");
+        console.log("inserted: ", msg);
         db.close();
       });
     });
-*/
   });
+
 
 });
 
