@@ -1,1 +1,1 @@
-# IoT Platform using MEAN Stack REST API and Arduino101
+# IoT Platform using MEAN Stack RESTful API and Arduino101
